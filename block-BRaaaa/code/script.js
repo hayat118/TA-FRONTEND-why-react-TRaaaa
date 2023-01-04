@@ -7,6 +7,8 @@ function watch(event){
   let value=event.target.elements.movie.value;
   console.log(value);
 
+  
+
 
   let p=document.createElement('p');
   let button=document.createElement('button');
@@ -26,7 +28,7 @@ function watch(event){
   list.append(div);
 
   event.target.elements.movie.value="";
-  
+
 }
 
 form.addEventListener('submit' , watch)
