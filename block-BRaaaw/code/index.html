@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      crossorigin
+      src="https://unpkg.com/react@18/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+    ></script>
+    <link rel="stylesheet" href="./assets/style.css" />
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <title>data card</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="text/babel">
+      let cards = [
+        {
+          _id: "60045f93884be473fdbf0b4d",
+          isActive: true,
+          balance: "$2,413.50",
+          picture:
+            "https://images.pexels.com/photos/91227/pexels-photo-91227.jpeg?auto=compress&cs=tinysrgb&w=400",
+          age: 39,
+          eyeColor: "brown",
+          name: "Potts Wynn",
+          gender: "male",
+          company: "EZENT",
+          email: "pottswynn@ezent.com",
+          phone: "+1 (836) 594-3962",
+          favoriteFruit: "strawberry",
+        },
+        {
+          _id: "60045f93a76be1b701891076",
+          isActive: false,
+          balance: "$3,198.07",
+          picture:
+            "https://images.pexels.com/photos/91227/pexels-photo-91227.jpeg?auto=compress&cs=tinysrgb&w=400",
+          age: 20,
+          eyeColor: "green",
+          name: "Beth Booth",
+          gender: "female",
+          company: "POLARIA",
+          email: "bethbooth@polaria.com",
+          phone: "+1 (994) 435-3325",
+          favoriteFruit: "strawberry",
+        },
+        {
+          _id: "60045f938ca11851129b8310",
+          isActive: false,
+          balance: "$2,971.38",
+          picture:
+            "https://images.pexels.com/photos/91227/pexels-photo-91227.jpeg?auto=compress&cs=tinysrgb&w=400",
+          age: 31,
+          eyeColor: "blue",
+          name: "Jennings Roy",
+          gender: "male",
+          company: "UPDAT",
+          email: "jenningsroy@updat.com",
+          phone: "+1 (878) 458-2861",
+          favoriteFruit: "banana",
+        },
+        {
+          _id: "60045f93315f0baf6c282555",
+          isActive: true,
+          balance: "$1,897.51",
+          picture:
+            "https://images.pexels.com/photos/91227/pexels-photo-91227.jpeg?auto=compress&cs=tinysrgb&w=400",
+          age: 33,
+          eyeColor: "green",
+          name: "Guthrie Cruz",
+          gender: "male",
+          company: "GEEKWAGON",
+          email: "guthriecruz@geekwagon.com",
+          phone: "+1 (891) 591-3419",
+          favoriteFruit: "apple",
+        },
+        {
+          _id: "60045f937a51aec6e8c63452",
+          isActive: false,
+          balance: "$1,453.84",
+          picture:
+            "https://images.pexels.com/photos/91227/pexels-photo-91227.jpeg?auto=compress&cs=tinysrgb&w=400",
+          age: 36,
+          eyeColor: "green",
+          name: "Bridgette Terrell",
+          gender: "female",
+          company: "EXTRAWEAR",
+          email: "bridgetteterrell@extrawear.com",
+          phone: "+1 (959) 505-3525",
+          favoriteFruit: "strawberry",
+        },
+        {
+          _id: "60045f93eec1578c3bbae42a",
+          isActive: false,
+          balance: "$1,293.43",
+          picture:
+            "https://images.pexels.com/photos/91227/pexels-photo-91227.jpeg?auto=compress&cs=tinysrgb&w=400",
+          age: 30,
+          eyeColor: "brown",
+          name: "Mia Wells",
+          gender: "female",
+          company: "CAPSCREEN",
+          email: "miawells@capscreen.com",
+          phone: "+1 (943) 521-2397",
+          favoriteFruit: "banana",
+        },
+        {
+          _id: "60045f93bd76695eac2fb43d",
+          isActive: false,
+          balance: "$3,184.87",
+          picture:
+            "https://images.pexels.com/photos/91227/pexels-photo-91227.jpeg?auto=compress&cs=tinysrgb&w=400",
+          age: 29,
+          eyeColor: "green",
+          name: "Ingrid Rutledge",
+          gender: "female",
+          company: "ANARCO",
+          email: "ingridrutledge@anarco.com",
+          phone: "+1 (863) 536-3084",
+          favoriteFruit: "banana",
+        },
+        {
+          _id: "60045f93814d700fd01e6f1b",
+          isActive: true,
+          balance: "$3,553.10",
+          picture:
+            "https://images.pexels.com/photos/91227/pexels-photo-91227.jpeg?auto=compress&cs=tinysrgb&w=400",
+          age: 37,
+          eyeColor: "blue",
+          name: "Ivy Bradley",
+          gender: "female",
+          company: "ISOPLEX",
+          email: "ivybradley@isoplex.com",
+          phone: "+1 (933) 448-3696",
+          favoriteFruit: "apple",
+        },
+      ];
+
+      let Card = (
+        <div className="main">
+          {cards.map((card) => {
+            return (
+              <div className={card.isActive ? "card-green" : "card-red"} key={card._id}>
+                <img src={card.picture} />
+                <h2>Name:{card.name} </h2>
+                <hr />
+                <h3>Age:{card.age}</h3>
+
+                {card.gender === "male" ? (
+                  <h4>Gender:male 🙋</h4>
+                ) : (
+                  <h4>Gender:female 🤷‍♀️</h4>
+                )}
+
+                <h4>Company: {card.company}</h4>
+                <h4>Eye-Color: {card.eyeColor}</h4>
+                <h5>Email: {card.email} </h5>
+                <h5>Fruit: {card.favoriteFruit} </h5>
+                <h6>Phone: {card.phone} </h6>
+                <p>Balance: {card.balance} </p>
+                <p >
+                  isActive: {card.isActive ? "true" : "false"}
+                </p>
+
+              
+
+              </div>
+            );
+          })}
+        </div>
+      );
+
+      // ReactDOM.render(card, document.getElementById('root'))
+
+      let root = ReactDOM.createRoot(document.getElementById("root"));
+      root.render(Card);
+    </script>
+  </body>
+</html>
